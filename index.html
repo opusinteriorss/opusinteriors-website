@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Opusinteriors | We design your dream spaces</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Opusinteriors offers premium home and office interiors in Uppal and across Hyderabad. Full home interiors, modular kitchens, wardrobes, false ceiling and more.">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: #f7f7f7;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 18px;
+    }
+
+    .nav-links a {
+      margin-left: 18px;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .nav-links a:hover {
+      opacity: 0.6;
+    }
+
+    .hero {
+      padding: 72px 16px 64px;
+      background: #ffffff;
+      border-bottom: 1px solid #eee;
+    }
+
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+
+    .hero h2 {
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 18px;
+      color: #555;
+    }
+
+    .hero p {
+      margin-bottom: 24px;
+      color: #444;
+    }
+
+    .hero-badges {
+      font-size: 14px;
+      margin-bottom: 24px;
+      color: #666;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .btn-primary, .btn-outline {
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-size: 14px;
+      border: 1px solid #222;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: #222;
+      color: white;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: #222;
+    }
+
+    .hero-note {
+      font-size: 12px;
+      color: #777;
+    }
+
+    .hero-card {
+      background: #f9f9f9;
+      border-radius: 16px;
+      padding: 20px;
+      border: 1px solid #eee;
+      font-size: 14px;
+    }
+
+    .hero-card h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    section {
+      padding: 56px 16px;
+    }
+
+    section:nth-of-type(even) {
+      background: #ffffff;
+    }
+
+    section:nth-of-type(odd) {
+      background: #f7f7f7;
+    }
+
+    section h2 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    section p.lead {
+      color: #555;
+      margin-bottom: 24px;
+    }
+
+    .grid-two {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 32px;
+    }
+
+    .list {
+      list-style: none;
+      margin-top: 8px;
+    }
+
+    .list li {
+      margin-bottom: 8px;
+      padding-left: 14px;
+      position: relative;
+      font-size: 14px;
+    }
+
+    .list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #999;
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .pill {
+      font-size: 13px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #eee;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .card {
+      background: #f9f9f9;
+      border-radius: 12px;
+      padding: 16px;
+      border: 1px solid #eee;
+      font-size: 14px;
+    }
+
+    .card h3 {
+      font-size: 16px;
+      margin-bottom: 8px;
+    }
+
+    .gallery-placeholder {
+      border: 1px dashed #ccc;
+      border-radius: 12px;
+      padding: 24px;
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+    }
+
+    .contact-box {
+      background: #f9f9f9;
+      border-radius: 16px;
+      padding: 20px;
+      border: 1px solid #eee;
+      font-size: 14px;
+    }
+
+    .contact-row {
+      margin-bottom: 10px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 16px;
+      font-size: 12px;
+      color: #888;
+      border-top: 1px solid #eee;
+      background: #ffffff;
+    }
+
+    @media (max-width: 768px) {
+      .hero-inner,
+      .grid-two {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 40px;
+      }
+
+      .hero h1 {
+        font-size: 28px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="logo">Opusinteriors</div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-inner">
+      <div>
+        <h1>We design your dream spaces.</h1>
+        <h2>Premium interiors in Uppal & across Hyderabad.</h2>
+        <p>
+          From layout to final finishing, Opusinteriors delivers functional,
+          elegant and long-lasting interiors for homes and offices.
+        </p>
+        <div class="hero-badges">
+          Full home interiors • Modular kitchens • Wardrobes • False ceiling
+        </div>
+        <div class="btn-row">
+          <a class="btn-primary" href="tel:+919052636768">📞 Call Now</a>
+          <a class="btn-outline" href="https://wa.me/919052636768" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+        </div>
+        <div class="hero-note">
+          Share your flat size (1BHK/2BHK/3BHK) and location on WhatsApp to get ideas and an approximate estimate.
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>Based in Uppal, Hyderabad</h3>
+        <p>
+          We work closely with you on design, materials and timelines to make
+          your interiors stress-free and transparent.
+        </p>
+        <ul class="list">
+          <li>Design + execution under one roof</li>
+          <li>Neat workmanship & clean finishing</li>
+          <li>Local team for easy coordination</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container grid-two">
+      <div>
+        <h2>About Opusinteriors</h2>
+        <p class="lead">
+          Every space has its own character. At Opusinteriors, we bring that
+          character out through thoughtful design and careful execution.
+        </p>
+        <p>
+          We handle complete interiors for 2BHK, 3BHK, villas and offices —
+          from planning the layout to executing the final details. Our focus
+          is on usability, storage and aesthetics working together.
+        </p>
+      </div>
+      <div>
+        <p><strong>Our approach:</strong></p>
+        <ul class="list">
+          <li>Understand your lifestyle, preferences and budget.</li>
+          <li>Plan layouts that use every inch effectively.</li>
+          <li>Suggest materials that balance look, durability and cost.</li>
+          <li>Coordinate execution with clear timelines and updates.</li>
+        </ul>
+        <div class="pill-list">
+          <div class="pill">Uppal-based</div>
+          <div class="pill">Hyderabad-wide service</div>
+          <div class="pill">End-to-end interiors</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <h2>Services</h2>
+      <p class="lead">
+        We provide complete interior solutions for homes and offices.
+      </p>
+      <div class="cards">
+        <div class="card">
+          <h3>Full Home Interiors</h3>
+          <p>
+            Living room, dining, bedrooms, kitchen and balconies — designed
+            and executed as a complete package.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Modular Kitchens</h3>
+          <p>
+            L-shaped, U-shaped, parallel and island kitchens with cabinets,
+            drawers, tall units and organizers.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Living Room & TV Units</h3>
+          <p>
+            TV wall units, paneling, wall shelves and storage to keep your
+            living room clean and stylish.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Bedrooms & Wardrobes</h3>
+          <p>
+            Sliding and hinged wardrobes, dressing units, work/study tables
+            and side tables for comfortable living.
+          </p>
+        </div>
+        <div class="card">
+          <h3>False Ceiling & Lighting</h3>
+          <p>
+            POP and gypsum ceilings with cove, spot and profile lights to
+            set the right mood for every room.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Office & Commercial Interiors</h3>
+          <p>
+            Reception areas, cabins, workstations and storage for small
+            offices and commercial spaces.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section id="why">
+    <div class="container">
+      <h2>Why choose Opusinteriors?</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Personalized designs</h3>
+          <p>
+            We design around your lifestyle, not just trends, so your space
+            is practical and comfortable every day.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Transparent process</h3>
+          <p>
+            Clear scope, materials and timelines with regular updates —
+            no last-minute surprises.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Quality workmanship</h3>
+          <p>
+            Focus on alignment, finishes and detailing to ensure a neat and
+            long-lasting outcome.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Local Hyderabad team</h3>
+          <p>
+            Easy site visits, quicker decisions and better coordination,
+            especially for Uppal and nearby areas.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <div class="container">
+      <h2>Gallery</h2>
+      <p class="lead">
+        We are updating this section with our latest interior projects.
+      </p>
+      <div class="gallery-placeholder">
+        Project photos of modular kitchens, living rooms, bedrooms and offices
+        will appear here soon.<br><br>
+        Contact us on WhatsApp to view sample work and references.
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <h2>Contact</h2>
+      <p class="lead">
+        Share your flat details and requirements. We’ll connect with you to
+        discuss ideas and next steps.
+      </p>
+      <div class="contact-box">
+        <div class="contact-row">
+          <strong>Opusinteriors – Interior Design & Execution</strong>
+        </div>
+        <div class="contact-row">
+          📍 <strong>Location:</strong> Uppal, Hyderabad
+        </div>
+        <div class="contact-row">
+          📱 <strong>Call:</strong> <a href="tel:+919052636768">+91 90526 36768</a>
+        </div>
+        <div class="contact-row">
+          💬 <strong>WhatsApp:</strong>
+          <a href="https://wa.me/919052636768" target="_blank" rel="noopener">
+            Chat on WhatsApp
+          </a>
+        </div>
+        <div class="contact-row" style="margin-top: 10px;">
+          <em>
+            Mention your flat type (1BHK/2BHK/3BHK), location and any reference
+            photos you like. We’ll get back with ideas and an approximate estimate.
+          </em>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  © <span id="year"></span> Opusinteriors, Uppal, Hyderabad. All rights reserved.
+</footer>
+
+<script>
+  // Set current year automatically
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
