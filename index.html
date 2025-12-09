@@ -457,17 +457,149 @@
 
   <!-- Gallery -->
   <section id="gallery">
-    <div class="container">
-      <h2>Gallery</h2>
-      <p class="lead">
-        We are updating this section with our latest interior projects.
-      </p>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-top: 20px;">
-         <img src="images/tv-unit.jpg" style="width:100%; border-radius: 12px;">
-         <img src="images/bedroom-modern.jpg" style="width:100%; border-radius: 12px;">
-         <img src="images/kitchen-design.jpg" style="width:100%; border-radius: 12px;">
+  <div class="container">
+    <h2>Gallery</h2>
+    <p class="lead">We are updating this section with our latest interior projects.</p>
+
+    <!-- ===== HERO SLIDER ===== -->
+    <div class="hero-slider">
+      <div class="hero-slides">
+        <img src="images/tv-unit.jpg" alt="TV Unit design" loading="lazy">
+        <img src="images/bedroom-modern.jpg" alt="Bedroom design" loading="lazy">
+        <img src="images/kitchen-design.jpg" alt="Kitchen design" loading="lazy">
       </div>
     </div>
+
+    <!-- ===== THUMBNAIL GRID ===== -->
+    <div class="thumb-grid" aria-label="Portfolio images">
+      <!-- main three -->
+      <div class="thumb"><img src="images/tv-unit.jpg" alt="" data-full="images/tv-unit.jpg" loading="lazy"></div>
+      <div class="thumb"><img src="images/bedroom-modern.jpg" alt="" data-full="images/bedroom-modern.jpg" loading="lazy"></div>
+      <div class="thumb"><img src="images/kitchen-design.jpg" alt="" data-full="images/kitchen-design.jpg" loading="lazy"></div>
+
+      <!-- additional project pics -->
+      <div class="thumb"><img src="images/s1.jpg" alt="" data-full="images/s1.jpg" loading="lazy"></div>
+      <div class="thumb"><img src="images/s2.jpg" alt="" data-full="images/s2.jpg" loading="lazy"></div>
+      <div class="thumb"><img src="images/s3.jpg" alt="" data-full="images/s3.jpg" loading="lazy"></div>
+      <div class="thumb"><img src="images/s4.jpg" alt="" data-full="images/s4.jpg" loading="lazy"></div>
+      <div class="thumb"><img src="images/s5.jpg" alt="" data-full="images/s5.jpg" loading="lazy"></div>
+      <div class="thumb"><img src="images/s6.jpg" alt="" data-full="images/s6.jpg" loading="lazy"></div>
+      <div class="thumb"><img src="images/s7.jpg" alt="" data-full="images/s7.jpg" loading="lazy"></div>
+    </div>
+  </div>
+
+  <!-- ===== LIGHTBOX MODAL ===== -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button class="lb-close" aria-label="Close">&times;</button>
+    <button class="lb-prev" aria-label="Previous">&#10094;</button>
+    <div class="lb-content"><img src="" alt="" id="lightbox-img"></div>
+    <button class="lb-next" aria-label="Next">&#10095;</button>
+  </div>
+</section>
+
+<!-- ===== SCRIPTS: slider + lightbox ===== -->
+<script>
+/* SIMPLE AUTO SLIDER (no dependency) */
+(function(){
+  const slides = document.querySelectorAll('.hero-slides img');
+  if (!slides.length) return;
+  let i = 0;
+  // show only current image, hide others via transform
+  function startSlider() {
+    const wrapper = document.querySelector('.hero-slides');
+    let total = slides.length;
+    let idx = 0;
+    setInterval(()=> {
+      idx = (idx + 1) % total;
+      wrapper.style.transform = 'translateX(' + (-100 * idx) + '%)';
+    }, 4000);
+  }
+  startSlider();
+})();
+
+/* LIGHTBOX behavior */
+(function(){
+  const lightbox = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightbox-img');
+  const thumbs = document.querySelectorAll('.thumb img');
+  const images = Array.from(thumbs).map(t => t.dataset.full);
+  let current = 0;
+
+  function openAt(index){
+    current = index;
+    lbImg.src = images[current];
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden','false');
+  }
+  function closeLB(){
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden','true');
+    lbImg.src = '';
+  }
+  function prev(){
+    current = (current - 1 + images.length) % images.length;
+    lbImg.src = images[current];
+  }
+  function next(){
+    current = (current + 1) % images.length;
+    lbImg.src = images[current];
+  }
+
+  thumbs.forEach((t,i) => {
+    t.addEventListener('click', ()=> openAt(i));
+  });
+
+  document.querySelector('.lb-close').addEventListener('click', closeLB);
+  document.querySelector('.lb-prev').addEventListener('click', prev);
+  document.querySelector('.lb-next').addEventListener('click', next);
+
+  // keyboard support
+  document.addEventListener('keydown', (e)=>{
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLB();
+    if (e.key === 'ArrowLeft') prev();
+    if (e.key === 'ArrowRight') next();
+  });
+
+  // click outside image to close
+  lightbox.addEventListener('click', (e)=>{
+    if (e.target === lightbox) closeLB();
+  });
+})();
+</script>
+
+<!-- ===== STYLES: add into your <style> or site CSS file ===== -->
+<style>
+/* HERO SLIDER */
+.hero-slider { width:100%; overflow:hidden; border-radius:12px; margin-top:18px; box-shadow:0 10px 30px rgba(10,10,10,0.06); }
+.hero-slides { display:flex; width:300%; transition:transform 0.6s ease; }
+.hero-slides img { width:100%; flex:1 0 100%; object-fit:cover; height:420px; }
+
+/* THUMB GRID */
+.thumb-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:14px; margin-top:20px; }
+.thumb { overflow:hidden; border-radius:10px; background:#f6f6f6; cursor:pointer; transition:transform .25s, box-shadow .25s; }
+.thumb img { width:100%; display:block; height:220px; object-fit:cover; transition:transform .35s; }
+.thumb:hover { transform: translateY(-6px); box-shadow:0 10px 25px rgba(10,10,10,0.08); }
+.thumb:hover img { transform:scale(1.04); }
+
+/* LIGHTBOX */
+.lightbox{ position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.75); z-index:99999; opacity:0; pointer-events:none; transition:opacity .25s; }
+.lightbox.open{ opacity:1; pointer-events:auto; }
+.lb-content{ max-width:92%; max-height:86%; }
+.lb-content img{ max-width:100%; max-height:86vh; border-radius:8px; display:block; margin:0 auto; }
+.lb-close, .lb-prev, .lb-next { position:fixed; background:transparent; border:none; color:#fff; font-size:28px; cursor:pointer; padding:12px; }
+.lb-close{ right:20px; top:18px; font-size:32px; }
+.lb-prev{ left:12px; top:50%; transform:translateY(-50%); font-size:38px; }
+.lb-next{ right:12px; top:50%; transform:translateY(-50%); font-size:38px; }
+
+/* Responsive */
+@media (max-width:768px){
+  .hero-slides img{ height:240px; }
+  .thumb img{ height:160px; }
+  .lb-prev, .lb-next{ display:block; font-size:28px; }
+}
+</style>
+
   </section>
 
   <!-- Contact -->
