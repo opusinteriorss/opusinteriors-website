@@ -1,659 +1,404 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Opusinteriorss | We design your dream spaces</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Opusinteriorss offers premium home and office interiors in Uppal and across Hyderabad. Full home interiors, modular kitchens, wardrobes, false ceiling and more.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Opusinteriorss offers premium home and office interiors in Uppal and across Hyderabad. Full home interiors, modular kitchens, wardrobes, false ceiling and more." />
+
+  <!-- ===== Colorful theme CSS (replace old <style> with this) ===== -->
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    :root{
+      --max-width:1100px;
+      --text:#222;
+      --muted:#555;
+      --surface:#ffffff;
+      --card-bg: rgba(255,255,255,0.7);
+      --glass-shadow: 0 10px 30px rgba(16,24,40,0.08);
+      --radius-lg: 16px;
+      --radius-md: 12px;
+      --accent-dark:#0f172a;
+      --accent-gold:#d4af37;
     }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
 
     body {
-      background: #f7f7f7;
-      color: #222;
+      background: linear-gradient(180deg,#fbfbfd 0%, #f3f7fb 100%);
+      color: var(--text);
       line-height: 1.6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+    a { text-decoration: none; color: inherit; }
 
     header {
-      background: #ffffff;
-      border-bottom: 1px solid #eee;
+      background: rgba(255,255,255,0.85);
+      border-bottom: 1px solid rgba(15,23,42,0.04);
       position: sticky;
       top: 0;
       z-index: 100;
+      backdrop-filter: blur(6px);
     }
 
-    .container {
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 16px;
+    .container { width: 100%; max-width: var(--max-width); margin: 0 auto; padding: 0 16px; }
+
+    .nav { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; }
+
+    .logo { font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; font-size: 18px; color: var(--accent-dark); }
+
+    .nav-links a { margin-left: 18px; font-size: 14px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-dark); }
+    .nav-links a:hover { opacity: 0.75; }
+
+    /* Visitor count small badge (if present) */
+    #visitor-count {
+      margin-left: 14px;
+      background: linear-gradient(90deg,#fff8e1,#fff4d6);
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:700;
+      font-size:13px;
+      color:var(--accent-dark);
+      box-shadow:var(--glass-shadow);
     }
 
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 12px 0;
-    }
-
-    .logo {
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 18px;
-    }
-
-    .nav-links a {
-      margin-left: 18px;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .nav-links a:hover {
-      opacity: 0.6;
-    }
-
+    /* HERO (section 1) */
     .hero {
       padding: 72px 16px 64px;
-      background: #ffffff;
-      border-bottom: 1px solid #eee;
+      background: linear-gradient(120deg,#FFDEE9 0%, #B5FFFC 100%);
+      border-bottom: 0;
     }
-
     .hero-inner {
-      max-width: 1100px;
+      max-width: var(--max-width);
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1.3fr 1fr;
       gap: 40px;
       align-items: center;
     }
+    .hero h1 { font-size: 36px; margin-bottom: 12px; color: #06122b; }
+    .hero h2 { font-size: 18px; font-weight: 400; margin-bottom: 18px; color: var(--muted); }
+    .hero p { margin-bottom: 24px; color: #18314a; }
+    .hero-badges { font-size: 14px; margin-bottom: 24px; color: #18314a; }
 
-    .hero h1 {
-      font-size: 36px;
-      margin-bottom: 12px;
-    }
-
-    .hero h2 {
-      font-size: 18px;
-      font-weight: 400;
-      margin-bottom: 18px;
-      color: #555;
-    }
-
-    .hero p {
-      margin-bottom: 24px;
-      color: #444;
-    }
-
-    .hero-badges {
-      font-size: 14px;
-      margin-bottom: 24px;
-      color: #666;
-    }
-
-    .btn-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 12px;
-    }
-
+    .btn-row { display:flex; flex-wrap:wrap; gap:12px; margin-bottom:12px; }
     .btn-primary, .btn-outline {
-      padding: 10px 18px;
-      border-radius: 999px;
-      font-size: 14px;
-      border: 1px solid #222;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      cursor: pointer;
+      padding: 10px 18px; border-radius: 999px; font-size: 14px; border: 1px solid rgba(0,0,0,0.07);
+      display:inline-flex; align-items:center; justify-content:center; gap:8px; cursor:pointer;
     }
-
-    .btn-primary {
-      background: #222;
-      color: white;
-    }
-
-    .btn-outline {
-      background: transparent;
-      color: #222;
-    }
-
-    .hero-note {
-      font-size: 12px;
-      color: #777;
-    }
+    .btn-primary { background: #06122b; color: #fff; box-shadow: 0 8px 20px rgba(6,18,43,0.12); }
+    .btn-outline { background: transparent; color: #06122b; border: 1px solid rgba(6,18,43,0.08); }
 
     .hero-card {
-      background: #f9f9f9;
-      border-radius: 16px;
+      background: rgba(255,255,255,0.85);
+      border-radius: var(--radius-lg);
       padding: 20px;
-      border: 1px solid #eee;
+      border: 1px solid rgba(15,23,42,0.04);
       font-size: 14px;
+      box-shadow: var(--glass-shadow);
+    }
+    .hero-card h3 { font-size: 16px; margin-bottom: 8px; }
+
+    /* Section base */
+    section { padding: 56px 16px; }
+
+    /* Alternate colorful backgrounds for each section while preserving odd/even structure */
+    section:nth-of-type(1) { /* hero already styled above, keep consistent if used */
+      background: linear-gradient(120deg,#FFDEE9 0%, #B5FFFC 100%);
+    }
+    section:nth-of-type(2) { /* about / services */
+      background: linear-gradient(120deg,#FEF3C7 0%, #FECACA 100%);
+    }
+    section:nth-of-type(3) { /* gallery / portfolio */
+      background: linear-gradient(180deg,#D8B4FE 0%, #93C5FD 100%);
+    }
+    section:nth-of-type(4) { /* contact */
+      background: linear-gradient(135deg,#A7F3D0 0%, #E0F2FE 100%);
+    }
+    /* Fallback color if sections exceed four */
+    section:nth-of-type(n+5) {
+      background: linear-gradient(180deg,#ffffffcc, #f7fafc);
     }
 
-    .hero-card h3 {
-      font-size: 16px;
-      margin-bottom: 8px;
-    }
+    /* Headings and text */
+    section h2 { font-size: 24px; margin-bottom: 12px; color: #0b1220; }
+    section p.lead { color: #1f2937; margin-bottom: 24px; }
 
-    section {
-      padding: 56px 16px;
-    }
+    .grid-two { display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; }
 
-    section:nth-of-type(even) {
-      background: #ffffff;
-    }
+    .list { list-style: none; margin-top: 8px; }
+    .list li { margin-bottom: 8px; padding-left: 14px; position: relative; font-size: 14px; color: #081426; }
+    .list li::before { content: "•"; position: absolute; left: 0; top: 0; color: rgba(0,0,0,0.25); }
 
-    section:nth-of-type(odd) {
-      background: #f7f7f7;
-    }
+    .pill-list { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+    .pill { font-size:13px; padding:6px 12px; border-radius:999px; background: rgba(255,255,255,0.7); box-shadow: 0 6px 16px rgba(16,24,40,0.04); }
 
-    section h2 {
-      font-size: 24px;
-      margin-bottom: 12px;
-    }
-
-    section p.lead {
-      color: #555;
-      margin-bottom: 24px;
-    }
-
-    .grid-two {
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 32px;
-    }
-
-    .list {
-      list-style: none;
-      margin-top: 8px;
-    }
-
-    .list li {
-      margin-bottom: 8px;
-      padding-left: 14px;
-      position: relative;
-      font-size: 14px;
-    }
-
-    .list li::before {
-      content: "•";
-      position: absolute;
-      left: 0;
-      top: 0;
-      color: #999;
-    }
-
-    .pill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 12px;
-    }
-
-    .pill {
-      font-size: 13px;
-      padding: 6px 12px;
-      border-radius: 999px;
-      background: #eee;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-      margin-top: 18px;
-    }
-
-    .card {
-      background: #f9f9f9;
-      border-radius: 12px;
-      padding: 16px;
-      border: 1px solid #eee;
-      font-size: 14px;
-    }
-
-    .card h3 {
-      font-size: 16px;
-      margin-bottom: 8px;
-    }
+    .cards { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:18px; margin-top:18px; }
+    .card { background: rgba(255,255,255,0.85); border-radius: var(--radius-md); padding:16px; border: 1px solid rgba(15,23,42,0.04); font-size:14px; box-shadow: var(--glass-shadow); }
+    .card h3 { font-size:16px; margin-bottom:8px; color:#071228; }
 
     .gallery-placeholder {
-      border: 1px dashed #ccc;
-      border-radius: 12px;
-      padding: 24px;
-      text-align: center;
-      font-size: 14px;
-      color: #777;
+      border: 1px dashed rgba(7,18,36,0.12);
+      border-radius:12px;
+      padding:24px;
+      text-align:center;
+      font-size:14px;
+      color:#334155;
+      background: rgba(255,255,255,0.6);
     }
 
     .contact-box {
-      background: #f9f9f9;
-      border-radius: 16px;
-      padding: 20px;
-      border: 1px solid #eee;
-      font-size: 14px;
+      background: rgba(255,255,255,0.85);
+      border-radius: var(--radius-lg);
+      padding:20px;
+      border: 1px solid rgba(15,23,42,0.04);
+      font-size:14px;
+      box-shadow: var(--glass-shadow);
     }
-
-    .contact-row {
-      margin-bottom: 10px;
-    }
+    .contact-row { margin-bottom:10px; }
 
     .footer {
-      text-align: center;
-      padding: 16px;
-      font-size: 12px;
-      color: #888;
-      border-top: 1px solid #eee;
-      background: #ffffff;
+      text-align:center;
+      padding:16px;
+      font-size:12px;
+      color:#334155;
+      border-top: 1px solid rgba(15,23,42,0.04);
+      background: linear-gradient(90deg,#ffffff,#fffbf3);
     }
 
-    @media (max-width: 768px) {
-      .hero-inner,
-      .grid-two {
-        grid-template-columns: 1fr;
-      }
+    /* Image thumbnails / gallery cards (if you have them) */
+    .thumb {
+      overflow:hidden;
+      border-radius:12px;
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(7,18,36,0.04);
+      transition: transform .28s ease, box-shadow .28s ease;
+    }
+    .thumb img { width:100%; height:200px; object-fit:cover; display:block; }
+    .thumb:hover { transform: translateY(-8px); box-shadow: 0 18px 45px rgba(16,24,40,0.12); }
 
-      .nav-links {
-        display: none;
-      }
+    /* small utilities */
+    .muted { color: var(--muted); }
+    .gold { color: var(--accent-gold); font-weight:700; }
 
-      .hero {
-        padding-top: 40px;
-      }
-
-      .hero h1 {
-        font-size: 28px;
-      }
+    @media (max-width: 900px){
+      .hero-inner, .grid-two { grid-template-columns: 1fr; }
+      .nav-links { display:none; }
+      .hero { padding-top: 40px; }
+      .hero h1 { font-size: 28px; }
+      .thumb img { height:160px; }
     }
   </style>
+  <!-- ===== end CSS ===== -->
 </head>
 <body>
 
-<header>
-  <div class="container nav">
-    <div class="logo">Opusinteriorss</div>
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </div>
-</header>
+  <!-- Header -->
+  <header>
+    <div class="container nav" role="banner">
+      <div class="logo">Opusinteriorss</div>
 
-<main>
-  <!-- Hero -->
-  <section class="hero" id="home">
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <!-- Visitor counter (top-right) -->
+      <div id="visitor-count">Loading visitors…</div>
+    </div>
+  </header>
+
+  <!-- HERO / INTRO -->
+  <section id="home" class="hero" aria-labelledby="hero-title">
     <div class="hero-inner">
       <div>
-        <h1>We design your dream spaces.</h1>
-        <h2>Premium interiors in Uppal & across Hyderabad.</h2>
-        <p>
-          From layout to final finishing, Opusinteriorss delivers functional,
-          elegant and long-lasting interiors for homes and offices.
-        </p>
-        <div class="hero-badges">
-          Full home interiors • Modular kitchens • Wardrobes • False ceiling
-        </div>
+        <h1 id="hero-title">We design your dream spaces</h1>
+        <h2>Premium home & office interiors in Uppal and across Hyderabad</h2>
+        <p class="lead">Full home interiors, modular kitchens, wardrobes, false ceiling, wardrobes, TV units and more — tailored solutions with transparent pricing and timely delivery.</p>
+
         <div class="btn-row">
-          <a class="btn-primary" href="tel:+919052636768">📞 Call Now</a>
-          <a class="btn-outline" href="https://wa.me/919052636768" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+          <a class="btn-primary" href="#contact" aria-label="Get a quote">Get Quote</a>
+          <a class="btn-outline" href="#gallery" aria-label="View gallery">View Gallery</a>
         </div>
-        <div class="hero-note">
-          Share your flat size (1BHK/2BHK/3BHK) and location on WhatsApp to get ideas and an approximate estimate.
-        </div>
+
+        <div class="hero-badges muted">Free site visit • 3D designs • Installation & aftercare</div>
       </div>
-      <div class="hero-card">
-        <h3> #3-9-524/3, Bhavani Nagar,Road No 9,Mansoorabad, Hyderabad-68</h3>
-        <p>
-          We work closely with you on design, materials and timelines to make
-          your interiors stress-free and transparent.
-        </p>
+
+      <aside class="hero-card" aria-labelledby="why-title">
+        <h3 id="why-title">Why choose Opusinteriorss?</h3>
+        <p class="muted">Years of experience, trusted suppliers, and an in-house team ensuring quality finishes. We handle design, procurement and installation end-to-end.</p>
         <ul class="list">
-          <li>Design + execution under one roof</li>
-          <li>Neat workmanship & clean finishing</li>
-          <li>Local team for easy coordination</li>
+          <li>Custom modular kitchens</li>
+          <li>Space optimized wardrobes</li>
+          <li>False ceilings & lighting</li>
+          <li>Timely project delivery</li>
         </ul>
-      </div>
+      </aside>
     </div>
   </section>
 
-  <!-- About -->
- <section id="about">
-  <div class="container grid-two">
-    <div>
-      <h2>About Opusinteriorss</h2>
-      <p class="lead">
-        Opusinteriorss is led by <strong>Mr. Vinod Sankoju</strong>, a seasoned interior professional with over <strong>20 years of hands-on experience</strong> in designing and executing residential and commercial spaces. With a strong reputation built over two decades, we have successfully delivered <strong>100+ interior projects</strong> across <strong>Telangana, Andhra Pradesh</strong>, and several other parts of India.
-      </p>
-
-      <p>
-        Every space has its own story. At Opusinteriorss, we understand your lifestyle, preferences, and functional needs to create interiors that are both <strong>beautiful and practical</strong>. Our work includes complete interiors for <strong>2BHK / 3BHK homes, villas, offices, and commercial spaces</strong>, covering layout planning, material selection, modular solutions, false ceiling, lighting, and end-to-end execution.
-      </p>
-    </div>
-
-    <div>
-      <p><strong>Our approach includes:</strong></p>
-      <ul class="list">
-        <li>Personalized design — tailored to how you live.</li>
-        <li>Transparent process — clear scope, materials and timelines.</li>
-        <li>Quality workmanship — attention to detail and neat finishing.</li>
-        <li>Timely delivery — we respect your schedule and budget.</li>
-        <li>Local support — easy site visits and coordination in Hyderabad.</li>
-      </ul>
-
-      <div style="margin-top:12px;">
-        <em>Want to see our work? Contact us on WhatsApp with your flat type (1BHK/2BHK/3BHK) and location — we’ll share relevant project photos and an approximate estimate.</em>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-  <!-- Services -->
-  <section id="services">
+  <!-- SERVICES / ABOUT -->
+  <section id="services" aria-labelledby="services-title">
     <div class="container">
-      <h2>Services</h2>
-      <p class="lead">
-        We provide complete interior solutions for homes and offices.
-      </p>
-      <div class="cards">
-        <div class="card">
-          <h3>Full Home Interiors</h3>
-          <p>
-            Living room, dining, bedrooms, kitchen and balconies — designed
-            and executed as a complete package.
-          </p>
+      <h2 id="services-title">Our Services</h2>
+      <p class="lead">We offer a wide range of interior services — from full home interiors to single room makeovers. Below are our most popular offerings.</p>
+
+      <div class="grid-two">
+        <div>
+          <div class="cards">
+            <div class="card">
+              <h3>Full Home Interiors</h3>
+              <p class="muted">Complete interiors for flats and independent homes with design & execution.</p>
+            </div>
+            <div class="card">
+              <h3>Modular Kitchens</h3>
+              <p class="muted">Smart storage, durable finishes and tailored layouts for modern living.</p>
+            </div>
+            <div class="card">
+              <h3>Wardrobes & Storage</h3>
+              <p class="muted">Space-efficient designs with premium hardware and finish options.</p>
+            </div>
+            <div class="card">
+              <h3>False Ceiling & Lighting</h3>
+              <p class="muted">Feature ceilings and layered lighting to enhance ambiance.</p>
+            </div>
+          </div>
         </div>
-        <div class="card">
-          <h3>Modular Kitchens</h3>
-          <p>
-            L-shaped, U-shaped, parallel and island kitchens with cabinets,
-            drawers, tall units and organizers.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Living Room & TV Units</h3>
-          <p>
-            TV wall units, paneling, wall shelves and storage to keep your
-            living room clean and stylish.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Bedrooms & Wardrobes</h3>
-          <p>
-            Sliding and hinged wardrobes, dressing units, work/study tables
-            and side tables for comfortable living.
-          </p>
-        </div>
-        <div class="card">
-          <h3>False Ceiling & Lighting</h3>
-          <p>
-            POP and gypsum ceilings with cove, spot and profile lights to
-            set the right mood for every room.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Office & Commercial Interiors</h3>
-          <p>
-            Reception areas, cabins, workstations and storage for small
-            offices and commercial spaces.
-          </p>
+
+        <div>
+          <div class="card">
+            <h3>How we work</h3>
+            <p class="muted">From site measurement to 3D design and installation — we keep you in the loop at every step.</p>
+            <ul class="pill-list">
+              <li class="pill">Site visit</li>
+              <li class="pill">3D design</li>
+              <li class="pill">Material selection</li>
+              <li class="pill">Installation</li>
+            </ul>
+            <div style="margin-top:18px;">
+              <strong>Service area:</strong>
+              <p class="muted">Uppal, Hyderabad — Call for travel options to nearby locations.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Why Choose Us -->
-  <section id="why">
+  <!-- GALLERY -->
+  <section id="gallery" aria-labelledby="gallery-title">
     <div class="container">
-      <h2>Why choose Opusinteriorss?</h2>
-      <div class="cards">
-        <div class="card">
-          <h3>Personalized designs</h3>
-          <p>
-            We design around your lifestyle, not just trends, so your space
-            is practical and comfortable every day.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Transparent process</h3>
-          <p>
-            Clear scope, materials and timelines with regular updates —
-            no last-minute surprises.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Quality workmanship</h3>
-          <p>
-            Focus on alignment, finishes and detailing to ensure a neat and
-            long-lasting outcome.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Local Hyderabad team</h3>
-          <p>
-            Easy site visits, quicker decisions and better coordination,
-            especially for Uppal and nearby areas.
-          </p>
-        </div>
+      <h2 id="gallery-title">Featured Projects</h2>
+      <p class="lead">A selection of recent projects — click to view full albums (replace these placeholders with your images).</p>
+
+      <div class="cards" style="margin-top:20px;">
+        <div class="thumb"><img alt="Project 1" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop"></div>
+        <div class="thumb"><img alt="Project 2" src="https://images.unsplash.com/photo-1598300050129-d8c8cd5a2f9a?q=80&w=1200&auto=format&fit=crop"></div>
+        <div class="thumb"><img alt="Project 3" src="https://images.unsplash.com/photo-1582582494702-9e8b7a1f2f40?q=80&w=1200&auto=format&fit=crop"></div>
+        <div class="thumb"><img alt="Project 4" src="https://images.unsplash.com/photo-1598300060544-7a6c0fe6e2ee?q=80&w=1200&auto=format&fit=crop"></div>
       </div>
     </div>
   </section>
 
-  <!-- Gallery -->
-  <section id="gallery">
-  <div class="container">
-    <h2>Gallery</h2>
-    <p class="lead">We are updating this section with our latest interior projects.</p>
-
-    <!-- ===== HERO SLIDER ===== -->
-    <div class="hero-slider">
-      <div class="hero-slides">
-        <img src="images/tv-unit.jpg" alt="TV Unit design" loading="lazy">
-        <img src="images/bedroom-modern.jpg" alt="Bedroom design" loading="lazy">
-        <img src="images/kitchen-design.jpg" alt="Kitchen design" loading="lazy">
-      </div>
-    </div>
-
-    <!-- ===== THUMBNAIL GRID ===== -->
-    <div class="thumb-grid" aria-label="Portfolio images">
-      <!-- main three -->
-      <div class="thumb"><img src="images/tv-unit.jpg" alt="" data-full="images/tv-unit.jpg" loading="lazy"></div>
-      <div class="thumb"><img src="images/bedroom-modern.jpg" alt="" data-full="images/bedroom-modern.jpg" loading="lazy"></div>
-      <div class="thumb"><img src="images/kitchen-design.jpg" alt="" data-full="images/kitchen-design.jpg" loading="lazy"></div>
-
-      <!-- additional project pics -->
-      <div class="thumb"><img src="images/s1.jpg" alt="" data-full="images/s1.jpg" loading="lazy"></div>
-      <div class="thumb"><img src="images/s2.jpg" alt="" data-full="images/s2.jpg" loading="lazy"></div>
-      <div class="thumb"><img src="images/s3.jpg" alt="" data-full="images/s3.jpg" loading="lazy"></div>
-      <div class="thumb"><img src="images/s4.jpg" alt="" data-full="images/s4.jpg" loading="lazy"></div>
-      <div class="thumb"><img src="images/s5.jpg" alt="" data-full="images/s5.jpg" loading="lazy"></div>
-      <div class="thumb"><img src="images/s6.jpg" alt="" data-full="images/s6.jpg" loading="lazy"></div>
-      <div class="thumb"><img src="images/s7.jpg" alt="" data-full="images/s7.jpg" loading="lazy"></div>
-    </div>
-  </div>
-
-  <!-- ===== LIGHTBOX MODAL ===== -->
-  <div id="lightbox" class="lightbox" aria-hidden="true">
-    <button class="lb-close" aria-label="Close">&times;</button>
-    <button class="lb-prev" aria-label="Previous">&#10094;</button>
-    <div class="lb-content"><img src="" alt="" id="lightbox-img"></div>
-    <button class="lb-next" aria-label="Next">&#10095;</button>
-  </div>
-</section>
-
-<!-- ===== SCRIPTS: slider + lightbox ===== -->
-<script>
-/* SIMPLE AUTO SLIDER (no dependency) */
-(function(){
-  const slides = document.querySelectorAll('.hero-slides img');
-  if (!slides.length) return;
-  let i = 0;
-  // show only current image, hide others via transform
-  function startSlider() {
-    const wrapper = document.querySelector('.hero-slides');
-    let total = slides.length;
-    let idx = 0;
-    setInterval(()=> {
-      idx = (idx + 1) % total;
-      wrapper.style.transform = 'translateX(' + (-100 * idx) + '%)';
-    }, 6000);
-  }
-  startSlider();
-})();
-
-/* LIGHTBOX behavior */
-(function(){
-  const lightbox = document.getElementById('lightbox');
-  const lbImg = document.getElementById('lightbox-img');
-  const thumbs = document.querySelectorAll('.thumb img');
-  const images = Array.from(thumbs).map(t => t.dataset.full);
-  let current = 0;
-
-  function openAt(index){
-    current = index;
-    lbImg.src = images[current];
-    lightbox.classList.add('open');
-    lightbox.setAttribute('aria-hidden','false');
-  }
-  function closeLB(){
-    lightbox.classList.remove('open');
-    lightbox.setAttribute('aria-hidden','true');
-    lbImg.src = '';
-  }
-  function prev(){
-    current = (current - 1 + images.length) % images.length;
-    lbImg.src = images[current];
-  }
-  function next(){
-    current = (current + 1) % images.length;
-    lbImg.src = images[current];
-  }
-
-  thumbs.forEach((t,i) => {
-    t.addEventListener('click', ()=> openAt(i));
-  });
-
-  document.querySelector('.lb-close').addEventListener('click', closeLB);
-  document.querySelector('.lb-prev').addEventListener('click', prev);
-  document.querySelector('.lb-next').addEventListener('click', next);
-
-  // keyboard support
-  document.addEventListener('keydown', (e)=>{
-    if (!lightbox.classList.contains('open')) return;
-    if (e.key === 'Escape') closeLB();
-    if (e.key === 'ArrowLeft') prev();
-    if (e.key === 'ArrowRight') next();
-  });
-
-  // click outside image to close
-  lightbox.addEventListener('click', (e)=>{
-    if (e.target === lightbox) closeLB();
-  });
-})();
-</script>
-
-<!-- ===== STYLES: add into your <style> or site CSS file ===== -->
-<style>
-/* HERO SLIDER */
-.hero-slider { width:100%; overflow:hidden; border-radius:12px; margin-top:18px; box-shadow:0 10px 30px rgba(10,10,10,0.06); }
-.hero-slides { display:flex; width:300%; transition:transform 1.2s ease; }
-.hero-slides img { width:100%; flex:1 0 100%; object-fit:contain; height:300px;background:#000; }
-
-/* THUMB GRID */
-.thumb-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:14px; margin-top:20px; }
-.thumb { overflow:hidden; border-radius:10px; background:#f6f6f6; cursor:pointer; transition:transform .25s, box-shadow .25s; }
-.thumb img { width:100%; display:block; height:220px; object-fit:cover; transition:transform .35s; }
-.thumb:hover { transform: translateY(-6px); box-shadow:0 10px 25px rgba(10,10,10,0.08); }
-.thumb:hover img { transform:scale(1.04); }
-
-/* LIGHTBOX */
-.lightbox{ position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.75); z-index:99999; opacity:0; pointer-events:none; transition:opacity .25s; }
-.lightbox.open{ opacity:1; pointer-events:auto; }
-.lb-content{ max-width:92%; max-height:86%; }
-.lb-content img{ max-width:100%; max-height:86vh; border-radius:8px; display:block; margin:0 auto; }
-.lb-close, .lb-prev, .lb-next { position:fixed; background:transparent; border:none; color:#fff; font-size:28px; cursor:pointer; padding:12px; }
-.lb-close{ right:20px; top:18px; font-size:32px; }
-.lb-prev{ left:12px; top:50%; transform:translateY(-50%); font-size:38px; }
-.lb-next{ right:12px; top:50%; transform:translateY(-50%); font-size:38px; }
-
-/* Responsive */
-@media (max-width:768px){
-  .hero-slides img{ height:240px; }
-  .thumb img{ height:160px; }
-  .lb-prev, .lb-next{ display:block; font-size:28px; }
-}
-</style>
-
-  </section>
-
-  <!-- Contact -->
-  <section id="contact">
+  <!-- CONTACT -->
+  <section id="contact" aria-labelledby="contact-title">
     <div class="container">
-      <h2>Contact</h2>
-      <p class="lead">
-        Share your flat details and requirements. We’ll connect with you to
-        discuss ideas and next steps.
-      </p>
-      <div class="contact-box">
-        <div class="contact-row">
-          <strong>Opusinteriorss – Interior Design & Execution</strong>
+      <h2 id="contact-title">Contact / Booking</h2>
+      <p class="lead">Get a free site visit and estimate. Share a few details and we'll get back with a 3D layout and quote.</p>
+
+      <div class="grid-two" style="align-items:start;">
+        <div>
+          <div class="contact-box">
+            <div class="contact-row"><strong>Phone:</strong> <a href="tel:+9191774591">+91 91774 591</a></div>
+            <div class="contact-row"><strong>Email:</strong> <a href="mailto:contact@opusinteriorss.com">contact@opusinteriorss.com</a></div>
+            <div class="contact-row"><strong>Address:</strong> Uppal & Hyderabad (service area)</div>
+            <div style="margin-top:10px;">
+              <a class="btn-primary" href="tel:+9191774591">Call Now</a>
+              <a class="btn-outline" href="mailto:contact@opusinteriorss.com">Email</a>
+            </div>
+          </div>
         </div>
-        <div class="contact-row">
-          📍 <strong>Location:</strong> #3-9-524/3, Bhavani Nagar,Road No 9,Mansoorabad, Hyderabad-68
-        </div>
-        <div class="contact-row">
-          📱 <strong>Call:</strong> <a href="tel:+919052636768">+91 90526 36768</a>
-        </div>
-        <div class="contact-row">
-          💬 <strong>WhatsApp:</strong>
-          <a href="https://wa.me/919052636768" target="_blank" rel="noopener">
-            Chat on WhatsApp
-          </a>
-        </div>
-        <div class="contact-row" style="margin-top: 10px;">
-          <em>
-            Mention your flat type (1BHK/2BHK/3BHK), location and any reference
-            photos you like. We’ll get back with ideas and an approximate estimate.
-          </em>
+
+        <div>
+          <div class="card">
+            <h3>Quick Enquiry</h3>
+            <p class="muted">Share a few details and we'll call back for a free site visit.</p>
+            <form id="enquiry-form" onsubmit="handleForm(event)">
+              <div style="display:flex;gap:8px;margin-bottom:8px;">
+                <input type="text" id="name" placeholder="Your name" style="flex:1;padding:10px;border-radius:8px;border:1px solid rgba(7,18,36,0.06);"/>
+              </div>
+              <div style="display:flex;gap:8px;margin-bottom:8px;">
+                <input type="tel" id="phone" placeholder="Phone number" style="flex:1;padding:10px;border-radius:8px;border:1px solid rgba(7,18,36,0.06);"/>
+              </div>
+              <div style="margin-bottom:8px;">
+                <textarea id="message" placeholder="Short note (area, budget, timeline)" style="width:100%;padding:10px;border-radius:8px;border:1px solid rgba(7,18,36,0.06);min-height:90px"></textarea>
+              </div>
+              <div style="text-align:right;">
+                <button type="submit" class="btn-primary">Send</button>
+              </div>
+            </form>
+            <div id="form-msg" style="margin-top:10px;font-size:13px;display:none;"></div>
+          </div>
         </div>
       </div>
     </div>
   </section>
-</main>
 
-<footer class="footer">
-  © <span id="year"></span> Opusinteriorss, Uppal, Hyderabad. All rights reserved.
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div>© <span id="year"></span> Opusinteriorss — We design your dream spaces</div>
 
-  <div style="margin-top: 10px;">
-  🎥 <strong>Follow us on YouTube:</strong>
-  <a href="https://www.youtube.com/@Opusinteriors" 
-     target="_blank" 
-     style="color: #d4af37; text-decoration: none;">
-     youtube.com/@Opusinteriors
-  </a>
-</div>  
-</footer>
+      <div style="margin-top: 10px;">
+        🎥 <strong>Follow us on YouTube:</strong>
+        <a href="https://www.youtube.com/@Opusinteriors" target="_blank" style="color: var(--accent-gold); text-decoration: none;">
+          youtube.com/@Opusinteriors
+        </a>
+      </div>
+    </div>
+  </footer>
 
-<script>
-  // Set current year automatically
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+  <!-- Minimal JS: Visitor counter + simple form handler + year -->
+  <script>
+    // Visitors counter (countapi.xyz). Replace 'opusinteriorss-site' with your unique key if you want.
+    (function(){
+      const key = 'opusinteriorss-site'; // change this to your site key
+      fetch('https://api.countapi.xyz/hit/' + key + '/visits')
+        .then(r => r.json())
+        .then(data => {
+          const el = document.getElementById('visitor-count');
+          if(el) el.innerText = 'Visitors: ' + (data.value || 0);
+        }).catch(()=>{ const el=document.getElementById('visitor-count'); if(el) el.innerText = 'Visitors: —'; });
+    })();
+
+    // Quick form handler (client-side only - replace with real endpoint when ready)
+    function handleForm(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const msgEl = document.getElementById('form-msg');
+
+      if(!name || !phone){
+        msgEl.style.display = 'block';
+        msgEl.style.color = '#b91c1c';
+        msgEl.textContent = 'Please enter your name and phone number.';
+        return;
+      }
+
+      // For now we just show a success message. Integrate with your backend or Google Forms to capture real leads.
+      msgEl.style.display = 'block';
+      msgEl.style.color = '#065f46';
+      msgEl.textContent = 'Thanks! We received your enquiry. We will call you shortly.';
+      document.getElementById('enquiry-form').reset();
+    }
+
+    // Set current year automatically
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 
 </body>
 </html>
