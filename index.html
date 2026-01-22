@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Opusinteriorss | Premium Interior Designers Hyderabad</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Opusinteriorss | Interior Designers Hyderabad</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header>
-  <div class="container nav">
+  <div class="nav">
     <strong>Opusinteriorss</strong>
-
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
-    <nav class="nav-links">
+    <nav>
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="gallery.html">Gallery</a>
@@ -23,13 +20,15 @@
   </div>
 </header>
 
-
 <section class="hero">
-  <div class="container hero-inner">
+  <div class="hero-inner">
     <div>
       <h1>Interiors you’ll love.</h1>
-      <h2>Without the stress!</h2>
-      <p>Premium modular kitchens, wardrobes & full home interiors in Hyderabad.</p>
+      <h2>Without the stress.</h2>
+      <p>
+        Premium modular kitchens, wardrobes and full home interiors
+        in Hyderabad with transparent pricing.
+      </p>
     </div>
 
     <div class="hero-form">
@@ -41,73 +40,29 @@
   </div>
 </section>
 
-  <section style="background:#f9fafb;">
+<section>
   <div class="container">
     <h2 class="section-title">Our Interior Designs</h2>
-
-    <div class="slider">
-      <div class="slides">
-        <img src="images/kitchen.jpg">
-        <img src="images/bedroom.jpg">
-        <img src="images/living.jpg">
-        <img src="images/wardrobe.jpg">
-      </div>
-    </div>
-  </div>
-</section>
-<section style="background:linear-gradient(120deg,#fef3c7,#fde68a);">
-  <div class="container">
-    <h2 class="section-title">What Our Customers Say</h2>
-
-    <div class="testimonial-slider">
-      
-      <div class="testimonial active">
-        <img src="images/user1.jpg">
-        <p>
-          “Opusinteriorss delivered our modular kitchen exactly as promised.
-          Excellent quality and smooth experience.”
-        </p>
-        <strong>— Ravi Kumar, Hyderabad</strong>
-      </div>
-
-      <div class="testimonial">
-        <img src="images/user2.jpg">
-        <p>
-          “Very professional team. Transparent pricing and on-time delivery.”
-        </p>
-        <strong>— Anjali Sharma</strong>
-      </div>
-
-      <div class="testimonial">
-        <img src="images/user3.jpg">
-        <p>
-          “Loved the 3D designs and final execution. Highly recommended!”
-        </p>
-        <strong>— Suresh Reddy</strong>
-      </div>
-
+    <div class="image-grid">
+      <img src="images/kitchen.jpg">
+      <img src="images/bedroom.jpg">
+      <img src="images/living.jpg">
     </div>
   </div>
 </section>
 
+<section class="testimonials">
+  <div class="testimonial">
+    <img src="images/user1.jpg">
+    <p>“Excellent quality and smooth execution. Highly recommended.”</p>
+    <strong>— Ravi Kumar, Hyderabad</strong>
+  </div>
+</section>
 
 <footer>
-  <p>© 2026 Opusinteriorss | Hyderabad</p>
-  <p>📞 9052636768 | WhatsApp Available</p>
+  © 2026 Opusinteriorss | Hyderabad <br>
+  📞 9052636768
 </footer>
 
-<script>
-let index = 0;
-const testimonials = document.querySelectorAll(".testimonial");
-
-setInterval(() => {
-  testimonials[index].classList.remove("active");
-  index = (index + 1) % testimonials.length;
-  testimonials[index].classList.add("active");
-}, 4000);
-</script>
-  
-  
-  
 </body>
 </html>
