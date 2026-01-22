@@ -101,11 +101,10 @@ section{
 
 /* FOOTER */
 footer{
-  background:#111;
+  background:linear-gradient(120deg,#111,#1f2937);
   color:white;
-  padding:30px 0;
-  text-align:center;
 }
+
 
 /* MOBILE */
 @media(max-width:900px){
