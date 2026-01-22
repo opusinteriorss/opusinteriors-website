@@ -117,3 +117,27 @@ footer{
     grid-template-columns:1fr;
   }
 }
+
+.slider{
+  overflow:hidden;
+  border-radius:20px;
+}
+
+.slides{
+  display:flex;
+  animation: slide 18s infinite linear;
+}
+
+.slides img{
+  width:100%;
+  max-width:400px;
+  margin-right:20px;
+  border-radius:16px;
+  box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+
+@keyframes slide{
+  0%{ transform:translateX(0) }
+  100%{ transform:translateX(-50%) }
+}
+
