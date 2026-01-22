@@ -92,30 +92,16 @@ header{
 }
 
 /* HERO */
-.hero{
-  min-height:100vh;
-  background:
-    linear-gradient(120deg, rgba(225,29,72,.85), rgba(99,102,241,.85)),
-    url("../images/hero.jpg") center/cover no-repeat;
-  display:flex;
-  align-items:center;
-  position:relative;
+.hero h1 {
+  font-size: clamp(32px, 6vw, 52px);
 }
 
-.hero h1{
-  font-size:52px;
-  font-weight:800;
+.hero h2 {
+  font-size: clamp(18px, 4vw, 26px);
 }
 
-.hero h2{
-  font-size:26px;
-  margin-top:10px;
-}
-
-.hero p{
-  font-size:18px;
-  margin-top:16px;
-  max-width:520px;
+.hero p {
+  font-size: clamp(15px, 3vw, 18px);
 }
 
 /* SECTIONS */
