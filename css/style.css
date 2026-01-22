@@ -175,9 +175,10 @@ footer{
   position:relative;
 }
 
-.testimonial{
-  display:none;
-  animation: fade 1s ease;
+.testimonial {
+  max-width: 90%;
+  margin: auto;
+  padding: 10px;
 }
 
 .testimonial.active{
