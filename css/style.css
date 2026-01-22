@@ -151,18 +151,18 @@ footer{
   border-radius:20px;
 }
 
-.slides{
-  display:flex;
-  animation: slide 18s infinite linear;
+.slides {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
 }
 
-.slides img{
-  width:100%;
-  max-width:400px;
-  margin-right:20px;
-  border-radius:16px;
-  box-shadow:0 20px 40px rgba(0,0,0,.15);
+.slides img {
+  scroll-snap-align: center;
+  min-width: 280px;
 }
+
 
 @keyframes slide{
   0%{ transform:translateX(0) }
