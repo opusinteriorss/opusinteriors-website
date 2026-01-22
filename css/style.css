@@ -139,4 +139,38 @@ footer{
   0%{ transform:translateX(0) }
   100%{ transform:translateX(-50%) }
 }
+.testimonial-slider{
+  max-width:700px;
+  margin:auto;
+  text-align:center;
+  position:relative;
+}
+
+.testimonial{
+  display:none;
+  animation: fade 1s ease;
+}
+
+.testimonial.active{
+  display:block;
+}
+
+.testimonial img{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+.testimonial p{
+  font-size:18px;
+  margin-bottom:10px;
+}
+
+@keyframes fade{
+  from{opacity:0}
+  to{opacity:1}
+}
 
