@@ -1,3 +1,7 @@
+:root {
+  --header-height: 80px;
+}
+
 :root{
   --dark:#0f172a;
   --muted:#6b7280;
