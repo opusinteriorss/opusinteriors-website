@@ -138,30 +138,35 @@ nav a.cta{
 }
 
 /* ===== TRUST STRIP ===== */
-.trust{
-  background:#fff;
-  padding:70px 24px;
+/* TRUST SECTION */
+.trust {
+  padding: 60px 20px;
+  background: #ffffff;
 }
 
-.trust-grid{
-  max-width:1280px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:30px;
-  text-align:center;
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.trust-item{
-  border:1px solid #eee;
-  padding:30px;
-  border-radius:20px;
+.trust-item {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px 20px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  transition: all 0.35s ease;
+  cursor: pointer;
 }
 
-.trust-item h3{
-  color:var(--gold);
-  font-size:28px;
-}
+/* Title */
+.trust-item h3 {
+  font-size: 22px;
+  colo
+
 
 /* ===== PACKAGES ===== */
 .section{
