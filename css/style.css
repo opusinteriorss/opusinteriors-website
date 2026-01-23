@@ -1,6 +1,9 @@
 :root {
   --header-height: 80px;
 }
+header {
+  height: var(--header-height);
+}
 
 :root{
   --dark:#0f172a;
@@ -36,14 +39,10 @@ header{
   background:rgba(15,23,42,.75);
   backdrop-filter:blur(8px);
 }
-
-.nav{
-  max-width:1280px;
-  margin:auto;
-  padding:18px 24px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+.nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .logo{
@@ -102,12 +101,14 @@ nav a.cta{
   max-width: 1280px;
   margin: auto;
   padding: 0 24px;
+
   display: flex;
   align-items: center;
 }
 
+
 .hero-text {
-  color: #fff;
+  max-width: 700px;
 }
 
 .hero-text h1 {
